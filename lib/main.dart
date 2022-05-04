@@ -1,3 +1,4 @@
+import 'package:core_structure/app/presentation/pages/test_screen/test_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
       locale:null,
       fallbackLocale:null,
       translations: null,
-      home: MyHomePage(),
+      home: TestView(),
       // customTransition: SizeTransitions(),
       // unknownRoute: GetPage(name: '/?', page: () => Container()),
       getPages: RouteSetting.pages,
@@ -53,15 +54,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-
 
 /// disable hiệu ứng scroll của android và scroll quá của ios
 class MyBehavior extends ScrollBehavior {

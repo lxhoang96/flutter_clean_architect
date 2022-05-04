@@ -2,7 +2,8 @@ import 'package:core_structure/app/domain/business_interfaces/business_interface
 
 class BusinessUsecases implements BusinessExampleInterfaces {
   @override
-  Future<bool> businessExampleBool(String _param)async {
-    return _param.contains('test');
+  Future<bool> businessExampleBool(String? _param) async {
+    return _param == null;
   }
 }
+

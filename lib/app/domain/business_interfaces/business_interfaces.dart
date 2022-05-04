@@ -1,4 +1,5 @@
 abstract class BusinessExampleInterfaces {
   
-  Future<bool> businessExampleBool(String _param);
+  Future<bool> businessExampleBool(String? _param);
 }
+

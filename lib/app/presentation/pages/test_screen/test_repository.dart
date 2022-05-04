@@ -1,6 +1,5 @@
 import 'package:core_structure/app/data/local_data/shared_prefences/preferences_storage.dart';
 import 'package:core_structure/app/domain/usecases/business_usecase.dart';
-import 'package:core_structure/cores/app_modules/commons.dart';
 import 'package:get/get.dart';
 
 class TestRepository extends GetxController {
@@ -9,17 +8,14 @@ class TestRepository extends GetxController {
   RxBool testValue = false.obs;
 
   @override
-  void onInit() async{
+  void onInit() async {
+    await Future.delayed(Duration(seconds: 2));
     testValue.value = await _workingExample();
     super.onInit();
   }
 
   Future<bool> _workingExample() async {
     String? _localData = await _storage.getItemExample('test');
-    if (checkStringNull(_localData)) {
-      bool result = await _usecases.businessExampleBool(_localData!);
-      return result;
-    }
-    return false;
+    return await _usecases.businessExampleBool(_localData);
   }
 }

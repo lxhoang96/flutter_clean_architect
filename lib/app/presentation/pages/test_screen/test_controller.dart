@@ -2,12 +2,10 @@ import 'package:core_structure/app/presentation/pages/test_screen/test_repositor
 import 'package:get/get.dart';
 
 class TestController extends GetxController {
-  TestRepository _repository = Get.put(TestRepository());
-  RxBool testValue = false.obs;
+  TestRepository repository = Get.put(TestRepository());
 
   @override
   void onReady() {
     super.onReady();
-    testValue = _repository.testValue;
   }
 }
