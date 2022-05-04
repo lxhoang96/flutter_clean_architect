@@ -1,8 +1,8 @@
 import 'package:core_structure/app/domain/business_interfaces/business_interfaces.dart';
 
-class BusinessUsecases extends BusinessExampleInterfaces {
+class BusinessUsecases implements BusinessExampleInterfaces {
   @override
-  Future<bool> businessExampleBool()async {
-    return false;
+  Future<bool> businessExampleBool(String _param)async {
+    return _param.contains('test');
   }
 }

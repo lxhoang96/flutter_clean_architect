@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:core_structure/app/data/data_interfaces/local_interfaces.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class PreferentStorage extends PreferencesStorageInterfaces {
+class PreferentStorage implements PreferencesStorageInterfaces {
 
-  Future<String?> getItem(String key) async {
+  Future<String?> _getItem(String key) async {
     final prefs = await SharedPreferences.getInstance();
     String? keyVal = prefs.getString(key);
     if (keyVal != null)
@@ -13,12 +13,12 @@ class PreferentStorage extends PreferencesStorageInterfaces {
       return null;
   }
 
-  Future<bool> setItem(String key, String data) async {
+  Future<bool> _setItem(String key, String data) async {
     final prefs = await SharedPreferences.getInstance();
     return await prefs.setString(key, data);
   }
 
-  Future<bool> removeItem(String key) async {
+  Future<bool> _removeItem(String key) async {
     final prefs = await SharedPreferences.getInstance();
     return await prefs.remove(key);
   }
@@ -31,16 +31,16 @@ class PreferentStorage extends PreferencesStorageInterfaces {
 
   @override
   Future<bool> removeItemExample(String key) async {
-    return await removeItem(key);
+    return await _removeItem(key);
   }
 
   @override
   Future<bool> setItemExample(String key, String value) async {
-    return await setItem(key, value);
+    return await _setItem(key, value);
   }
 
   @override
   Future<String?> getItemExample(String key)async {
-    return await getItem(key);
+    return await _getItem(key);
   }
 }

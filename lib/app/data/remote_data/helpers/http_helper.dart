@@ -6,7 +6,7 @@ import 'package:core_structure/app/domain/entities/handle_response_model.dart';
 
 const int REQUEST_TIME_OUT = 11;
 
-class HttpHelper extends RemoteInterfaces {
+class HttpHelper implements RemoteInterfaces {
   /// init http client
   HttpClient _client = HttpClient();
   init() {

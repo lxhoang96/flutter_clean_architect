@@ -1,7 +1,7 @@
 import 'package:core_structure/app/data/data_interfaces/local_interfaces.dart';
 import 'package:sqflite/sqflite.dart';
 
-class SqliteModule extends SqliteInterfaces{
+class SqliteModule implements SqliteInterfaces{
   final int _defaultVersion = 1;
 
   // make this a singleton class
