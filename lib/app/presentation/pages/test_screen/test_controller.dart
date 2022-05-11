@@ -2,7 +2,8 @@ import 'package:core_structure/app/presentation/pages/test_screen/test_repositor
 import 'package:get/get.dart';
 
 class TestController extends GetxController {
-  TestRepository repository = Get.put(TestRepository());
+  TestRepository repository;
+  TestController({required this.repository});
 
   @override
   void onReady() {

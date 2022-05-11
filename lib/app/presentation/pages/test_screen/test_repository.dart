@@ -3,8 +3,10 @@ import 'package:core_structure/app/domain/usecases/business_usecase.dart';
 import 'package:get/get.dart';
 
 class TestRepository extends GetxController {
-  BusinessUsecases _usecases = BusinessUsecases();
-  PreferentStorage _storage = PreferentStorage();
+  final BusinessUsecases usecases;
+  final PreferentStorage storage;
+
+  TestRepository({required this.storage, required this.usecases});
   RxBool testValue = false.obs;
 
   @override
@@ -15,7 +17,7 @@ class TestRepository extends GetxController {
   }
 
   Future<bool> _workingExample() async {
-    String? _localData = await _storage.getItemExample('test');
-    return await _usecases.businessExampleBool(_localData);
+    String? _localData = await storage.getItemExample('test');
+    return await usecases.businessExampleBool(_localData);
   }
 }

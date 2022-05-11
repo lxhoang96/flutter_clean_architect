@@ -3,17 +3,15 @@ import 'package:core_structure/cores/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class TestView extends StatelessWidget {
+class TestView extends GetView<TestController> {
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<TestController>(
-        init: TestController(),
-        builder: ((ctrl) => Scaffold(
+    return Scaffold(
               backgroundColor: AppTheme.white,
               body: Center(
                 child: Obx(() {
                   Color _color;
-                  if (ctrl.repository.testValue.value) {
+                  if (controller.repository.testValue.value) {
                     _color = AppTheme.blue;
                   } else {
                     _color = AppTheme.colorRed;
@@ -25,6 +23,6 @@ class TestView extends StatelessWidget {
                   );
                 }),
               ),
-            )));
+            );
   }
 }
