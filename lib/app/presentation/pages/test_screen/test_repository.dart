@@ -1,10 +1,10 @@
-import 'package:core_structure/app/data/local_data/shared_prefences/preferences_storage.dart';
-import 'package:core_structure/app/domain/usecases/business_usecase.dart';
+import 'package:core_structure/app/data/data_interfaces/local_interfaces.dart';
+import 'package:core_structure/app/domain/business_interfaces/business_interfaces.dart';
 import 'package:get/get.dart';
 
 class TestRepository extends GetxController {
-  final BusinessUsecases usecases;
-  final PreferentStorage storage;
+  final BusinessExampleInterfaces usecases;
+  final PreferencesStorageInterfaces storage;
 
   TestRepository({required this.storage, required this.usecases});
   RxBool testValue = false.obs;
