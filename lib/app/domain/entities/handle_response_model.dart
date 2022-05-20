@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+part 'handle_response_model.g.dart';
+
+@JsonSerializable()
 class HandleResponseModel {
   String? message;
   String? code;
@@ -5,18 +9,8 @@ class HandleResponseModel {
 
   HandleResponseModel({this.message, this.code, this.body});
 
-  HandleResponseModel.fromJson(Map<String, dynamic> json) {
-    message = json['message'];
-    code = json['code'];
-    body = json['body'];
-  }
+  factory HandleResponseModel.fromJson(Map<String, dynamic> json) => _$HandleResponseModelFromJson(json);
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['message'] = this.message;
-    data['code'] = this.code;
-    data['body'] = this.body;
-  
-    return data;
-  }
+  /// Connect the generated [_$HandleResponseModelToJson] function to the `toJson` method.
+  Map<String, dynamic> toJson() => _$HandleResponseModelToJson(this);
 }
