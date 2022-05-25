@@ -3,7 +3,7 @@ import 'package:core_structure/app/data/local_data/shared_prefences/preferences_
 import 'package:core_structure/app/domain/business_interfaces/business_interfaces.dart';
 import 'package:core_structure/app/domain/usecases/business_usecase.dart';
 import 'package:core_structure/app/presentation/pages/test_screen/test_controller.dart';
-import 'package:core_structure/app/presentation/pages/test_screen/test_repository.dart';
+import 'package:core_structure/app/presentation/pages/test_screen/test_viewmodel.dart';
 import 'package:core_structure/app/presentation/pages/test_screen/test_view.dart';
 import 'package:get/get.dart';
 
@@ -23,8 +23,8 @@ class TestBinding extends Bindings {
   void dependencies() {
     PreferencesStorageInterfaces _storage = PreferentStorage();
     BusinessExampleInterfaces _usecases = BusinessUsecases();
-    TestRepository _repository =
-        Get.put(TestRepository(storage: _storage, usecases: _usecases));
-    Get.lazyPut(() => TestController(repository: _repository));
+    TestViewModel _viewModel =
+        Get.put(TestViewModel(storage: _storage, usecases: _usecases));
+    Get.lazyPut(() => TestController(viewModel: _viewModel));
   }
 }

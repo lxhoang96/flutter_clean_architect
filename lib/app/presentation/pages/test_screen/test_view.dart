@@ -11,7 +11,7 @@ class TestView extends GetView<TestController> {
               body: Center(
                 child: Obx(() {
                   Color _color;
-                  if (controller.repository.testValue.value) {
+                  if (controller.viewModel.testValue.value) {
                     _color = AppTheme.blue;
                   } else {
                     _color = AppTheme.colorRed;
